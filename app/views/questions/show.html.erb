@@ -1,0 +1,12 @@
+
+
+<h2><%= @question.content %></h2>
+
+<% @choices= ["選択肢1","選択肢2","選択肢3","選択肢4"]%>
+<br>
+<% @choices.each do |choice| %>
+<br>
+<%= choice %>
+<br>
+<% end %>
+
