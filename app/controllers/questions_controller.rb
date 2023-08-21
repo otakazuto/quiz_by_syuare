@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @choices = Choice.where(params[:question_id])
   end
 
   private
