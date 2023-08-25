@@ -1,0 +1,18 @@
+
+<% if @select_answer.is_correct == true %>
+
+<div>
+  <p>大正解</p>
+  <p><%= @select_answer.choice_text %></p>
+  <p><%= @answer.explanation %></p>
+</div>
+
+<% else %>
+
+<div>
+  <p>不正解</p>
+  <p><%= @select_answer.choice_text %></p>
+  <p><%= @answer.explanation %></p>
+</div>
+
+<% end %>
