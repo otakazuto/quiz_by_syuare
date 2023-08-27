@@ -7,16 +7,22 @@ class CyclesController < ApplicationController
             session[:count] = 0
             session[:true_count] = 0
             session[:false_count] = 0
+            session[:questions_id] = Question.pluck(:id)
         end
 
         if session[:count] == 5
             session.delete(:count)
             session.delete(:true_count)
             session.delete(:false_count)
+            session.delete(:questions_id)
 
             redirect_to root_path
         else
-            redirect_to question_path(1)
+            ids = session[:questions_id]
+            random_id = ids.sample
+            session[:questions_id].delete(random_id)
+
+            redirect_to question_path(random_id)
         end
     end
 

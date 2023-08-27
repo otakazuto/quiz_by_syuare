@@ -1,27 +1,30 @@
 
-<% if @select_answer.is_correct == true %>
+<div class="h-32 flex justify-center items-center">
+  <% if @select_answer.is_correct == true %>
 
-<div>
-  <p>大正解</p>
-  <p><%= @select_answer.choice_text %></p>
-  <p><%= @answer.explanation %></p>
-</div>
+  <div>
+    <p>大正解</p>
+    <p><%= @select_answer.choice_text %></p>
+    <p><%= @answer.explanation %></p>
+  </div>
 
 <% else %>
 
-<div>
-  <p>不正解</p>
-  <p><%= @select_answer.choice_text %></p>
-  <p><%= @answer.explanation %></p>
-</div>
+  <div>
+    <p>不正解</p>
+    <p><%= @select_answer.choice_text %></p>
+    <p><%= @answer.explanation %></p>
+  </div>
 
 <% end %>
-
-<div>
-  <p><%= @select_answer.is_correct %></p>
-  <p><%= "正解数#{@true_count}不正解数#{@false_count}"%></p>
 </div>
+<div class="min-h-screen flex flex-col justify-center items-center">
+  <div>
+    <p><%= @select_answer.is_correct %></p>
+    <p><%= "正解数#{@true_count}不正解数#{@false_count}"%></p>
+  </div>
 
-<div class="flex h-screen items-center justify-center">
+  <div class="mt-5">
     <p><%= link_to "次へ", control_session_path %></p>
+  </div>
 </div>
