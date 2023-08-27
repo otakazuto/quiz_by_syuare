@@ -16,3 +16,12 @@
 </div>
 
 <% end %>
+
+<div>
+  <p><%= @select_answer.is_correct %></p>
+  <p><%= "正解数#{@true_count}不正解数#{@false_count}"%></p>
+</div>
+
+<div class="flex h-screen items-center justify-center">
+    <p><%= link_to "次へ", control_session_path %></p>
+</div>

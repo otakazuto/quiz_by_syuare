@@ -4,6 +4,11 @@ class AnswersController < ApplicationController
     @selected_choice_text = session[:selected_choice_text]
     @select_answer = Choice.find_by(choice_text: @selected_choice_text)
 
+    if session[:true_count] && session[:false_count]
+      @true_count = session[:true_count]
+      @false_count = session[:false_count]
+    end
+
     #if @answer.nil?
     #  flash[:error] = '回答が見つかりませんでした。'
     #  redirect_to root_path # 回答がない場合はrootに飛ぶ

@@ -4,6 +4,9 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @choices = Choice.where(question_id: params[:id])
+
+    @count = session[:count] + 1
+
   end
 
   private
