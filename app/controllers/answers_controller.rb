@@ -9,22 +9,24 @@ class AnswersController < ApplicationController
       @false_count = session[:false_count]
     end
 
+    @count = session[:count]
     #if @answer.nil?
     #  flash[:error] = '回答が見つかりませんでした。'
     #  redirect_to root_path # 回答がない場合はrootに飛ぶ
     #end
   end
 
-  def check_answer
-    data = params[:choice_text]
-    session[:selected_choice_text] = data
+  #"cyclesコントローラ―のcount_questionアクション内で実行するため不要"
+  #def check_answer
+  #  data = params[:choice_text]
+  #  session[:selected_choice_text] = data
 
-    @select_answer = Choice.find_by(choice_text: data)
-    if @select_answer
-      redirect_to answer_path(@select_answer.question_id)
-    else
-      redirect_to root_path
-    end
+  #  @select_answer = Choice.find_by(choice_text: data)
+  #  if @select_answer
+  #    redirect_to answer_path(@select_answer.question_id)
+  #  else
+  #    redirect_to root_path
+  #  end
 
     #以下はデータを受け取れているかを確認した物
     #if @select_answer
@@ -36,6 +38,6 @@ class AnswersController < ApplicationController
     #else
     #  redirect_to root_path
     #end
-  end
+  #end
   
 end

@@ -1,5 +1,6 @@
 
 <div class="h-32 flex justify-center items-center">
+<p><%= @count %></p>
   <% if @select_answer.is_correct == true %>
 
   <div>
@@ -17,6 +18,8 @@
   </div>
 
 <% end %>
+
+<% if session[:count] != 4%>
 </div>
 <div class="min-h-screen flex flex-col justify-center items-center">
   <div>
@@ -28,3 +31,9 @@
     <p><%= link_to "次へ", control_session_path %></p>
   </div>
 </div>
+
+<% else %>
+  <div class="min-h-screen flex flex-col justify-center items-center">
+    <p><%= link_to "結果発表", results_show_path %></p>
+  </div>
+<% end %>
