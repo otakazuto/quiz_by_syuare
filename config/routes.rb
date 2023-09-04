@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'results/show'
+  
+  root "test#index"
+  
+  resources :test, only: %i[index]
+  resources :questions, only: %i[show]
+  resources :answers, only: %i[show]
+  resources :results, only: %i[show]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/control_session', to: 'cycles#control_session' 
+  get '/count_questions', to: 'cycles#count_questions'
 end

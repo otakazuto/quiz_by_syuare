@@ -1,0 +1,44 @@
+
+<% if @true_count == 1 %>
+  <div>
+    <p>あなたは</p>
+    <h2>少年サッカー選手 <span>レベル</span></h2>
+    <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+    <p><%= "次は全問正解目指して頑張りましょう"%></p>
+  </div>
+
+<% elsif @true_count == 2 %>
+  <div>
+    <p>あなたは</p>
+    <h2>社会人サッカー選手 <span>レベル</span></h2>
+    <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+    <p><%= "次は全問正解目指して頑張りましょう"%></p>
+  </div>
+
+<% elsif @true_count == 3 %>
+  <div>
+    <p>あなたは</p>
+    <h2>Jリーグ選手 <span>レベル</span></h2>
+    <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+    <p><%= "次は全問正解目指して頑張りましょう"%></p>
+  </div>
+
+<% elsif @true_count == 4 %>
+  <div>
+    <p>あなたは</p>
+    <h2>五大リーグ選手 <span>レベル</span></h2>
+    <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+    <p><%= "次は全問正解目指して頑張りましょう"%></p>
+  </div>
+
+<% elsif @true_count == 5 %>
+  <div>
+    <p>あなたは</p>
+    <h2>神の子メッシ <span>レベル</span></h2>
+    <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+    <p><%= "全問正解おめでとうございます！"%></p>
+  </div>
+
+<% end %>
+
+<p><%= link_to "HOME", control_session_path %></p>
