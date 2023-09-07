@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
+/* フレックスコンテナの設定 */
+.flex-container {
+  display: flex;
+  flex-direction: column; /* 垂直方向のコンテナ */
+  border-radius: 10px; /* 角の丸みを設定 */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 影の設定 */
+  width: 450px; /* 横幅を固定 */
+  height: 500px; /* 縦幅を固定 */
 }
 
-*/
+.mt-48 {
+    margin-top: 12rem/* 192px */;
+}
