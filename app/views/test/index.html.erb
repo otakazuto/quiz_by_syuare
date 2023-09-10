@@ -1,8 +1,12 @@
 
-<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-    <div class="flex">
-        <button class="bg-green-600 hover:bg-green-500 text-white text-4xl rounded px-4 py-2">
-            <%= link_to "スタート", control_session_path %>
-        </button>
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <div class="flex flex-col mt-10">
+            <div>
+                <p class="text-2xl text-center">CLICK or TAP</p>
+                <p class="text-2xl text-center font-bold mt-1">↓</p>
+            </div>
+            <button class="bg-orange-400 hover:bg-orange-300 text-white text-7xl px-4 py-2 mt-1" style=" box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border-radius: 10px">
+                <%= link_to "START", control_session_path %>
+            </button>
+        </div>
     </div>
-</div>

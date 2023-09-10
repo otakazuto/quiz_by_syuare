@@ -12,6 +12,17 @@
   height: 500px; /* 縦幅を固定 */
 }
 
+/* フレックスコンテナの下部に固定するスタイル*/
+.flex-cont-end {
+  position: absolute;
+  bottom:60px;
+  width: 450px;
+}
+
 .mt-48 {
     margin-top: 12rem/* 192px */;
+}
+
+.mt-40 {
+    margin-top: 10rem/* 160px */;
 }

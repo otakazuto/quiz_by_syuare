@@ -5,54 +5,55 @@
       <h2 class=" text-3xl font-bold mt-8">結果発表</h2>
       <% if @true_count == 0 %>
         <div>
-          <p class="mt-8">あなたは</p>
-          <p class="text-red-500">赤ちゃん <span class="text-black">レベル</span></p>
-          <p  class="mt-8"><%= "あなたは5問中#{@true_count}問正解です。"%></p>
-          <p class="mt-8"><%= "次は全問正解目指して頑張りましょう!"%></p>
+          <p class="mt-16">あなたは</p>
+          <p><span class="text-red-500 text-2xl">赤ちゃん</span> レベル</p>
+          <p  class="mt-7"><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+          <p class="text-blue-900 text-2xl mt-1"><%= "次は全問正解目指して頑張りましょう!"%></p>
         </div>
 
       <% elsif @true_count == 1 %>
         <div>
-          <p class="mt-8">あなたは</p>
-          <p class="text-red-500">少年サッカー選手 <span class="text-black">レベル</span></p>
-          <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
-          <p><%= "次は全問正解目指して頑張りましょう!"%></p>
+          <p class="mt-16">あなたは</p>
+          <p><span class="text-red-500 text-2xl">少年サッカー選手</span> レベル</p>
+          <p  class="mt-7"><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+          <p class="text-blue-900 text-2xl mt-1"><%= "次は全問正解目指して頑張りましょう!"%></p>
         </div>
 
       <% elsif @true_count == 2 %>
         <div>
-          <p class="mt-8">あなたは</p>
-          <p class="text-red-500">社会人サッカー選手 <span class="text-black">レベル</span></p>
-          <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
-          <p><%= "次は全問正解目指して頑張りましょう!"%></p>
+          <p class="mt-16">あなたは</p>
+          <p><span class="text-red-500 text-2xl">社会人サッカー選手</span> レベル</p>
+          <p  class="mt-7"><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+          <p class="text-blue-900 text-2xl mt-1"><%= "次は全問正解目指して頑張りましょう!"%></p>
         </div>
 
       <% elsif @true_count == 3 %>
         <div>
-          <p class="mt-8">あなたは</p>
-          <p class="text-red-500">Jリーグ選手 <span class="text-black">レベル</span></p>
-          <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
-          <p><%= "次は全問正解目指して頑張りましょう!"%></p>
+          <p class="mt-16">あなたは</p>
+          <p><span class="text-red-500 text-2xl">Jリーグ選手</span> レベル</p>
+          <p  class="mt-7"><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+          <p class="text-blue-900 text-2xl mt-1"><%= "次は全問正解目指して頑張りましょう!"%></p>
         </div>
 
       <% elsif @true_count == 4 %>
         <div>
-          <p class="mt-8">あなたは</p>
-          <p class="text-red-500">五大リーグ選手 <span class="text-black">レベル</span></p>
-          <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
-          <p><%= "次は全問正解目指して頑張りましょう!"%></p>
+          <p class="mt-16">あなたは</p>
+          <p><span class="text-red-500 text-2xl">五大リーグ選手</span> レベル</p>
+          <p  class="mt-7"><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+          <p class="text-blue-900 text-2xl mt-1"><%= "次は全問正解目指して頑張りましょう!"%></p>
         </div>
 
       <% elsif @true_count == 5 %>
         <div>
-          <p class="mt-8">あなたは</p>
-          <p class="text-red-500">神の子メッシ <span class="text-black">レベル</span></p>
-          <p><%= "あなたは5問中#{@true_count}問正解です。"%></p>
-          <p><%= "全問正解おめでとうございます！"%></p>
+          <p class="mt-16">あなたは</p>
+          <p><span class="text-red-500 text-2xl">神の子メッシ</span> レベル</p>
+          <p  class="mt-7"><%= "あなたは5問中#{@true_count}問正解です。"%></p>
+          <p class="text-yellow-600 text-2xl mt-1"><%= "全問正解おめでとうございます！"%></p>
         </div>
 
       <% end %>
-
-      <button class="bg-gray-600 hover:bg-gray-500 text-white rounded px-4 py-2 mt-48">
-        <p><%= link_to "HOME", control_session_path %></p>
-      </button>
+      <div class="flex-cont-end">
+        <button class="bg-gray-600 hover:bg-gray-500 text-white rounded px-4 py-2" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+          <p><%= link_to "HOME", control_session_path %></p>
+        </button>
+      </div>
