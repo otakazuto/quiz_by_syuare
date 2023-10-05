@@ -15,8 +15,8 @@
       window.history.pushState(null, null, null);
       window.addEventListener('popstate', function(e) {
       // console.log("test")
-      if  (confirm('本当に戻りますか？')) {
-          history.back();
+      if  (confirm('ホームに戻りますが、本当に戻りますか？')) {
+          window.location.href = '<%= browserback_session_path %>';
           // console.log("test")
       } else {
         e.preventDefault(); // ブラウザのデフォルトの戻る動作を無効にする

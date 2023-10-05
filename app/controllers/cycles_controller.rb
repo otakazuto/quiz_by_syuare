@@ -40,4 +40,13 @@ class CyclesController < ApplicationController
 
         redirect_to answer_path(@select_answer.question_id)
     end
+
+    def browserback_session
+        session.delete(:count)
+        session.delete(:true_count)
+        session.delete(:false_count)
+        session.delete(:questions_id)
+
+        redirect_to root_path
+    end
 end
