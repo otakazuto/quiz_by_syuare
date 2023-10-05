@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   get '/control_session', to: 'cycles#control_session' 
   get '/count_questions', to: 'cycles#count_questions'
+  get '/browserback_session', to: 'cycles#browserback_session'
 end
