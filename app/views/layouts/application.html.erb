@@ -11,6 +11,20 @@
   </head>
 
   <body>
+    <script>
+      window.history.pushState(null, null, null);
+      window.addEventListener('popstate', function(e) {
+      // console.log("test")
+      if  (confirm('ホームに戻りますが、本当に戻りますか？')) {
+          window.location.href = '<%= browserback_session_path %>';
+          // console.log("test")
+      } else {
+        e.preventDefault(); // ブラウザのデフォルトの戻る動作を無効にする
+        history.pushState(null, null, location.href); // ブラウザの履歴を元に戻す
+          // console.log("test")
+          }
+      });
+    </script>
     <div class="flex justify-center mt-5">
         <%= image_tag("quiz_by_syuare.png", alt: "app" ,width: 150, height: 200)%>
       </div>
