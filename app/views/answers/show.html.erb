@@ -8,6 +8,11 @@
           <p class="text-red-500 text-2xl font-bold mt-12">大正解</p>
           <p class="mt-9"><%= @select_answer.choice_text %></p>
           <p class=" text-start px-10 mt-6"><%= @answer.explanation %></p>
+          <div class="align-items flex-end">
+            <p class=" text-center px-10 mt-6 text-blue-700">-------wikipediaの情報-------</p>
+            <p class=" text-start px-10 mt-1"><%= @wiki_info %></p>
+            <p class="text-end px-10 mt-1 text-blue-700"><%= link_to "続きを見る", @wiki_link %></p>
+         </div>
         </div>
 
       <% else %>
