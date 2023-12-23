@@ -27,4 +27,8 @@ RSpec.describe Question, type: :model do
     expect(question).to_not be_valid
   end
 
+  #it 'データの確認' do
+  #  question = FactoryBot.build(:question)
+  #    puts " ID: #{question.id}, content: #{question.content}"
+  #end
 end
