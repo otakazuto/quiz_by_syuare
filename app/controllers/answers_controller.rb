@@ -1,15 +1,19 @@
+require 'wikipedia'
+
 class AnswersController < ApplicationController
   def show
     @answer = Answer.find_by(question_id: params[:id])
     @selected_choice_text = session[:selected_choice_text]
     @select_answer = Choice.find_by(choice_text: @selected_choice_text)
-
+    
     if session[:true_count] && session[:false_count]
       @true_count = session[:true_count]
       @false_count = session[:false_count]
     end
-
+    
     @count = session[:count]
+
+    get_wikipedia_information
     #if @answer.nil?
     #  flash[:error] = '回答が見つかりませんでした。'
     #  redirect_to root_path # 回答がない場合はrootに飛ぶ
@@ -39,5 +43,18 @@ class AnswersController < ApplicationController
     #  redirect_to root_path
     #end
   #end
-  
+
+private
+
+  def get_wikipedia_information
+
+    wiki_data = Wikipedia.find(@select_answer.choice_text)
+    @wiki_link = wiki_data.fullurl
+
+    if wiki_data.summary.blank?
+      @wiki_info = "Wikipediaに情報がありません"
+    else
+      @wiki_info = wiki_data.summary[0, 150] + (wiki_data.summary.length > 150 ? "....." : "")
+    end
+  end
 end
