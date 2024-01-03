@@ -1,0 +1,44 @@
+<div class="text-center text-xl">
+    <!-- <h2 class="mb-4 text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">問題作成</h2> -->
+        <p>下記のフォームに入力して問題を作成しましょう。</p>
+        <p><span class="text-red-600 text-2xl">※</span>管理人の認証後に作成した問題が出題されるようになります。</p>
+</div>
+
+    <% flash.each do |key, value| %>
+    <div class="flash <%= key %> text-center text-red-600 mt-3">
+        <%= value %>
+    </div>
+    <% end %>
+    <div class="flex flex-col items-center px-4 mt-5">
+        <div class="mt-5 space-y-2" style="width: 650px;">
+            <%= form_with(model: @question, url: questions_path, method: :post) do |form| %>
+                <!-- 質問のフォーム -->
+                <p class="text-left"><%= form.label :content,  "問題文の入力(10文字以上100文字以内)"%></p>
+                <p><%= form.text_area :content, class: " w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %></p>
+
+                <!-- 選択肢のフォーム -->
+                <% 4.times do |i| %>
+                    <%= form.fields_for "choices[#{i}]", Choice.new do |choice_form| %>
+                    <p><%= choice_form.label :choice_text, "選択肢の入力(正解の選択肢にはチェックをつけて下さい)"%></p>
+                    <div>
+                        <%= choice_form.text_field :choice_text, class: " rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %>
+                        <%= choice_form.check_box :is_correct %>
+                    </div>
+                    <% end %>
+                <% end %>
+
+                <!-- 回答のフォーム -->
+                <%= form.fields_for :answer do |answer_form| %>
+                    <p><%= answer_form.label :answer, "解答の入力(10文字以上100文字以内)"%></p>
+                    <p><%= answer_form.text_area :explanation, class: " w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" %></p>
+                <% end %>
+
+            <div class="text-center mt-3">
+                <%= form.submit "送信", class: "bg-blue-500 hover:bg-blue-400 text-white px-4 py-2", style: "box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); border-radius: 10px" %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+
+
+

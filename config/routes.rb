@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "test#index"
   
   resources :test, only: %i[index]
-  resources :questions, only: %i[show]
+  resources :questions, except: %i[index edit update destroy]
   resources :answers, only: %i[show]
   resources :results, only: %i[show]
 
