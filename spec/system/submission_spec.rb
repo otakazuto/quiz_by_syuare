@@ -28,6 +28,19 @@ RSpec.describe 'Example System Spec', type: :system, js: true do
 
         click_button '送信'
 
+        #保存されたデータを保存
+        question_data = Question.last
+        choice_data = Choice.where(question_id: question_data.id)
+        answer_data = Answer.last
+
+        expect(question_data.content).to eq("サッカーは何人でするでしょうか。")
+        expect(choice_data[0].choice_text).to eq("10人")
+        expect(choice_data[1].choice_text).to eq("11人")
+        expect(choice_data[2].choice_text).to eq("12人")
+        expect(choice_data[3].choice_text).to eq("13人")
+        expect(answer_data.explanation).to eq("正解は11人です。フィールド、キーパー合わせて11人で試合を行います。")
+        
+
         #送信が完了したか確認
         expect(page).to have_content("送信が完了しました。ご協力ありがとうございます。")
     end
