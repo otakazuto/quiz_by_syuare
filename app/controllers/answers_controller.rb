@@ -12,8 +12,16 @@ class AnswersController < ApplicationController
     end
     
     @count = session[:count]
-
+    
     get_wikipedia_information
+    
+    case I18n.locale
+    when :ja
+      render "answers/ja/show"
+    when :en
+      render "answers/en/show"
+    end
+    
     #if @answer.nil?
     #  flash[:error] = '回答が見つかりませんでした。'
     #  redirect_to root_path # 回答がない場合はrootに飛ぶ

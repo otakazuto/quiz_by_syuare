@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   
   resources :test, only: %i[index]
   resources :questions, except: %i[index edit update destroy]
-  resources :answers, only: %i[show]
+
+  scope "/:locale", constraints: { locale: /en|ja/ }do
+    resources :answers, only: %i[show]
+  end
+  
   resources :results, only: %i[show]
 
   get '/control_session', to: 'cycles#control_session' 

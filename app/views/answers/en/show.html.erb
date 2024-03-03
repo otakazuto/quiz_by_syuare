@@ -1,0 +1,48 @@
+<div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+  <div class="flex-container bg-gray-300">
+    <div class="flex-col text-center">
+
+      <% if @select_answer.is_correct == true %>
+
+        <div>
+          <p class="text-red-500 text-2xl font-bold mt-12">Correct</p>
+          <p class="mt-9"><%= @select_answer.choice_text %></p>
+          <p class=" text-start px-10 mt-6"><%= @answer.explanation %></p>
+          <div class="align-items flex-end">
+            <p class=" text-center px-10 mt-6 text-blue-700">-------wikipedia-------</p>
+            <p class=" text-start px-10 mt-1"><%= @wiki_info %></p>
+            <p class="text-end px-10 mt-1 text-blue-700"><%= link_to "View more", @wiki_link %></p>
+         </div>
+        </div>
+
+      <% else %>
+
+        <div>
+          <p class="text-blue-700 text-2xl font-bold mt-12">Incorrect</p>
+          <p class="mt-9"><%= @select_answer.choice_text %></p>
+          <p class=" text-start px-10 mt-6"><%= @answer.explanation %></p>
+        </div>
+
+      <% end %>
+
+      <div class="flex-cont-end">
+        <% if session[:count] != 4%>
+            <div class="text-xl">
+              <p><%= "Correct #{@true_count} : Incorrect #{@false_count}"%></p>
+            </div>
+
+            <div class="mt-3">
+              <button class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); border-radius: 20px">
+                <p><%= link_to "Next", control_session_path %></p>
+              </button>
+            </div>
+
+        <% else %>
+              <button class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2" style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); border-radius: 20px">
+                <p><%= link_to "Announcement of results", results_show_path %></p>
+              </button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -38,7 +38,7 @@ class CyclesController < ApplicationController
             session[:false_count] += 1
         end
 
-        redirect_to answer_path(@select_answer.question_id)
+        redirect_to answer_path(I18n.locale, @select_answer.question_id)
     end
 
     def browserback_session
