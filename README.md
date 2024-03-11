@@ -33,7 +33,7 @@
 ``JavaScript``<br>
 ``Tailwind CSS``<br>
 
-【使用ツール】
+【使用ツール】<br>
 ``RSpec(テスト)``<br>
 ``wikipedia-client(Wikipediaのデータ取得のAPI)``<br>
 
