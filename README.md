@@ -1,15 +1,52 @@
-# README
-
-* tailwindcssのbuild方法... docker-compose exec web rails tailwindcss:build  
-
-* アセットコンパイルのコマンド... docker-compose exec web bundle exec rails assets:precompile
-* Rspecの実行コマンド... docker-compose exec web bundle exec rspec  
-
-##### tailwwindcssの変更を反映させる手順(feature/add_qustion_submissionブランチ時点)
-1. tailwindcssの変更を保存<br>
-   ↓<br>
-2. docker-compose exec web bundle exec rails assets:precompile<br>
-   ↓<br>
-3. dockerコンテナの再起動
-
 # quiz_by_syuare
+**サッカーのクイズを楽しみたい人、知識を身につけたい人に向けた、クイズサービスです。**
+
+# サービスの概要と背景
+
+## サービスの概要
+サッカーのクイズをして楽しみたい人、知識を見つけたい人に向けた、クイズサービスです。<br>
+最大5問をランダムに出題され、正解数に応じて結果画面が変わります。<br>
+自分で考えた問題を投稿すれば、その問題をクイズとして出題することが出来ます。<br>
+
+
+## このサービスのターゲット
+* サッカーのクイズをしたい方
+* サッカーのクイズを考えて問題を出題したい方
+
+## このサービスで解決できること
+1. 自分が知らないサッカーに関する知識を知りたい。<br>
+2. 自分の知っているサッカーに関する知識を共有したい。
+
+# 画面一覧
+![Example Image](TOPページ.png)<br>
+![Example Image](ページ一覧.png)<br>
+![Example Image](投稿ページ.png)<br>
+
+
+## 主な使用技術 
+【バックエンド】<br>
+``Ruby on Rails (ver 7.04)``<br>
+``Ruby (ver 3.12)``<br>
+``MySQL``<br>
+
+【フロントエンド】<br>
+``JavaScript``<br>
+``Tailwind CSS``<br>
+
+【使用ツール】
+``RSpec(テスト)``<br>
+``wikipedia-client(Wikipediaのデータ取得のAPI)``<br>
+
+【インフラ】<br>
+``Docker / Docker-Compose`` <br>
+
+## ER図
+![Example Image](quiz_by_syuare,ER図.png)
+
+## 機能一覧
+* クイズの回答と結果の確認
+* 問題の投稿機能
+
+--- 
+
+最後までお読みいただきありがとうございました。
